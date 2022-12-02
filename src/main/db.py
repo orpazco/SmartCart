@@ -1,5 +1,5 @@
+import json
 import sqlite3
-import uuid
 
 
 class SmartCartDB:
@@ -16,8 +16,8 @@ class SmartCartDB:
         self.con.commit()
         self._next_pid += 1
 
-    def add_new_customer(self, cid: str, name: str, active: bool):
-        self.cursor.execute("""INSERT INTO customers(id,name,active) VALUES(?,?,?)""", (cid, name, int(active)))
+    def add_new_customer(self, cid: str, name: str):
+        self.cursor.execute("""INSERT OR IGNORE INTO customers(id,name) VALUES(?,?)""", (cid, name))
         self.con.commit()
 
     def add_item_to_cart(self, cid: int, pid: str):
@@ -59,12 +59,10 @@ class SmartCartDB:
         self.con.close()
 
     def _update_products(self):
-        self.add_new_product("apple", 5.40)
-        self.add_new_product("banana", 3.33)
-        self.add_new_product("bread", 12.0)
-        self.add_new_product("milk", 13.40)
-        self.add_new_product("chocolate", 18.90)
-        self.add_new_product("eggs", 21.99)
+        with open("src/main/resources/products/products_list.json") as f:
+            products = json.load(f)
+            for name in products:
+                self.add_new_product(name, products[name])
 
 
 db_session = SmartCartDB()

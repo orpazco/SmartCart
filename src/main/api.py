@@ -1,9 +1,9 @@
-import json
+from collections import Counter
 
 from flask import Flask
 from flask import request
+
 from db import db_session as db
-from collections import Counter
 
 app = Flask(__name__)
 PRODUCT_NAME = 0
