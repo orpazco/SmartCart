@@ -15,7 +15,7 @@ def add_new_customer():
     try:
         cid = request.json.get('cid')
         name = request.json.get('name')
-        db.add_new_customer(cid, name, True)
+        db.add_new_customer(cid, name)
         return f'add customer {name}: {cid} successfully'
     except Exception as e:
         return e.args[0], 400
@@ -46,6 +46,6 @@ def get_total(customer_id):
         cart = db.get_cart(customer_id)
         prod_list = [p[COST] for p in cart]
         return {"cart": Counter([p[PRODUCT_NAME] for p in cart]),
-                "total": sum(prod_list)}
+                "total": round(sum(prod_list), 3)}
     except Exception as e:
         return e.__cause__, 400

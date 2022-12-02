@@ -31,11 +31,6 @@ class SmartCartDB:
                                             WHERE carts.customer_id=?;""", (str(cid),))
         return self.cursor.fetchall()
 
-    def get_cost(self, product_name):
-        self.cursor.execute("""SELECT cost
-        FROM groceries
-        """)
-
     def _create_tables(self):
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS customers (
                                         id text PRIMARY KEY,
