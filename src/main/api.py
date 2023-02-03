@@ -1,9 +1,8 @@
 from collections import Counter
-
 from flask import Flask
 from flask import request
-
 from db import db_session as db
+from shortest_path.groceries_graph import graph as g
 
 app = Flask(__name__)
 PRODUCT_NAME = 0
@@ -47,5 +46,15 @@ def get_total(customer_id):
         prod_list = [p[COST] for p in cart]
         return {"cart": Counter([p[PRODUCT_NAME] for p in cart]),
                 "total": round(sum(prod_list), 3)}
+    except Exception as e:
+        return e.__cause__, 400
+
+@app.route('/bestPath', methods=['POST'])
+def get_best_path():
+    try:
+        data = request.get_json()
+        groceries = data.get('groceries')
+        g.update_shortest_path(groceries)
+        return {"path": g.to_string()}
     except Exception as e:
         return e.__cause__, 400
