@@ -1,0 +1,102 @@
+{
+    "cheese": {
+        "aisle": "D",
+        "shelf": 3
+    },
+    "eggs": {
+        "aisle": "A",
+        "shelf": 1
+    },
+    "tofu": {
+        "aisle": "G",
+        "shelf": 3
+    },
+    "white wine": {
+        "aisle": "E",
+        "shelf": 2
+    },
+    "basil": {
+        "aisle": "C",
+        "shelf": 2
+    },
+    "banana": {
+        "aisle": "E",
+        "shelf": 1
+    },
+    "tomatoes": {
+        "aisle": "D",
+        "shelf": 7
+    },
+    "cucumber": {
+        "aisle": "A",
+        "shelf": 1
+    },
+    "apple": {
+        "aisle": "A",
+        "shelf": 6
+    },
+    "potatoes": {
+        "aisle": "D",
+        "shelf": 1
+    },
+    "milk": {
+        "aisle": "E",
+        "shelf": 3
+    },
+    "bread": {
+        "aisle": "A",
+        "shelf": 4
+    },
+    "rice": {
+        "aisle": "C",
+        "shelf": 3
+    },
+    "avocado": {
+        "aisle": "G",
+        "shelf": 7
+    },
+    "strawberries": {
+        "aisle": "A",
+        "shelf": 2
+    },
+    "orange": {
+        "aisle": "F",
+        "shelf": 2
+    },
+    "mushrooms": {
+        "aisle": "A",
+        "shelf": 8
+    },
+    "red wine": {
+        "aisle": "B",
+        "shelf": 7
+    },
+    "cola": {
+        "aisle": "A",
+        "shelf": 6
+    },
+    "orange juice": {
+        "aisle": "E",
+        "shelf": 7
+    },
+    "pasta": {
+        "aisle": "E",
+        "shelf": 4
+    },
+    "salmon": {
+        "aisle": "A",
+        "shelf": 5
+    },
+    "chicken": {
+        "aisle": "F",
+        "shelf": 6
+    },
+    "hummus": {
+        "aisle": "G",
+        "shelf": 1
+    },
+    "yogurt": {
+        "aisle": "E",
+        "shelf": 3
+    }
+}
