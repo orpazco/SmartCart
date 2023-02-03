@@ -54,7 +54,7 @@ class SmartCartDB:
         self.con.close()
 
     def _update_products(self):
-        with open("src/main/resources/products/products_list.json") as f:
+        with open("resources/products/products_list.json") as f:
             products = json.load(f)
             for name in products:
                 self.add_new_product(name, products[name])
